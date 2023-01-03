@@ -4,9 +4,15 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let passwordButton = document.getElementById("passwordButton");
 
 function generatePassword() {
-  // Get the desired password length from the input field
   const passwordLength = document.getElementById('passwordLength').value;
-
+  if (passwordLength < 10) {
+    alert('For a secure password, it is recommended to use at least 10 characters.');
+    return;
+  }
+  if (passwordLength > 28) {
+    passwordLength = 28;
+  }
+  
   // Get the character options from the checkboxes
   const uppercaseOption = document.getElementById('uppercase-letters-option').checked;
   const lowercaseOption = document.getElementById('lowercase-letters-option').checked;
