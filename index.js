@@ -4,6 +4,10 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let passwordButton = document.getElementById("passwordButton");
 
 function generatePassword() {
+  // Define the characterSet variable
+  let characterSet = '';
+
+  // Get the password length and character options from the HTML
   const passwordLength = document.getElementById('passwordLength').value;
   if (passwordLength < 10) {
     alert('For a secure password, it is recommended to use at least 10 characters.');
@@ -12,8 +16,6 @@ function generatePassword() {
   if (passwordLength > 28) {
     passwordLength = 28;
   }
-  
-  // Get the character options from the checkboxes
   const uppercaseOption = document.getElementById('uppercase-letters-option').checked;
   const lowercaseOption = document.getElementById('lowercase-letters-option').checked;
   const numbersOption = document.getElementById('numbers-option').checked;
@@ -48,7 +50,7 @@ function generatePassword() {
     return;
   }
 
-  // Generate the first password
+    // Generate the first password
   let passwordOne = '';
   for (let i = 0; i < passwordLength; i++) {
     const charSet = passwordCharOptions[Math.floor(Math.random() * passwordCharOptions.length)];
@@ -59,15 +61,14 @@ function generatePassword() {
   // Generate the second password
   let passwordTwo = '';
   for (let i = 0; i < passwordLength; i++) {
-    const charSet = passwordCharOptions[Math.floor(Math.random() * passwordCharOptions.length)];
-    const randomChar = charSet[Math.floor(Math.random() * charSet.length)];
-    passwordTwo += randomChar;
+    const character = characterSet[Math.floor(Math.random() * characterSet.length)];
+    passwordTwo += character;
   }
 
   // Display the generated passwords in the password boxes
   document.getElementById('passwordBoxOne').innerHTML = passwordOne;
   document.getElementById('passwordBoxTwo').innerHTML = passwordTwo;
-}
+
 
 
 function generatePasswordWithOptions(length, includeUppercase, includeLowercase, includeNumbers, includeSpecialCharacters) {
