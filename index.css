@@ -1,135 +1,134 @@
 :root {
-    --main-font: "Karla", sans-serif;
-    --main-color: rgba(74, 223, 134, 1);
-  }
+  --main-font: "Karla", sans-serif;
+  --main-color: rgba(74, 223, 134, 1);
+}
+
+body {
+  background: #1f2937;
+}
+
+.app--container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+h1 {
+  color: white;
+  font-family: var(--main-font);
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.green--text {
+  color: var(--main-color);
+}
+
+h2 {
+  color: #d5d4d8;
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 10px;
+}
+
+.passwordLengthContainer {
+  font-family: var(--main-font);
+  margin-top: 80px;
+}
+
+.passwordLengthContainer label {
+  color: rgba(255, 255, 255, 0.347);
+}
+
+.passwordLengthContainer input {
+  width: 50px;
+  height: 25px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.passwordButton {
+  width: 200px;
+  padding: 15px 20px;
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 17px;
+  color: white;
+  background-color: rgba(16, 185, 129, 1);
+  border: none;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+hr {
+  margin-left: 0;
+  border: 1px solid #2f3e53;
+  width: 600px;
+  margin-top: 60px;
+}
+
+.password--container {
+  display: flex;
+  justify-content: start;
+}
+.password--box {
+  width: 235px;
+  height: 20px;
+  margin-right: 50px;
+  margin-top: 30px;
+  padding: 15px 20px;
+  background-color: #273549;
+  border-radius: 6px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.character-option {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 50px;
   
-  body {
-    background: #1f2937;
-  }
-  
-  .app--container {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 150px;
-  }
-  
-  h1 {
-    color: white;
-    font-family: var(--main-font);
-    font-weight: 800;
-    font-size: 50px;
-    line-height: 50px;
-  }
-  
-  .green--text {
-    color: var(--main-color);
-  }
-  
-  h2 {
-    color: #d5d4d8;
-    font-family: var(--main-font);
-    font-weight: 400;
-    font-size: 29px;
-    line-height: 10px;
-  }
-  
-  .passwordLengthContainer {
-    font-family: var(--main-font);
-    margin-top: 80px;
-  }
-  
-  .passwordLengthContainer label {
-    color: rgba(255, 255, 255, 0.347);
-  }
-  
-  .passwordLengthContainer input {
-    width: 50px;
-    height: 25px;
-    margin-left: 10px;
-    text-align: center;
-  }
-  
-  .passwordButton {
-    width: 200px;
-    padding: 15px 20px;
-    font-family: var(--main-font);
-    font-weight: 500;
-    font-size: 17px;
-    color: white;
-    background-color: rgba(16, 185, 129, 1);
-    border: none;
-    border-radius: 6px;
-    margin-top: 20px;
-  }
-  
-  hr {
-    margin-left: 0;
-    border: 1px solid #2f3e53;
-    width: 600px;
-    margin-top: 60px;
-  }
-  
-  .password--container {
-    display: flex;
-    justify-content: start;
-  }
-  .password--box {
-    width: 235px;
-    height: 20px;
-    margin-right: 50px;
-    margin-top: 30px;
-    padding: 15px 20px;
-    background-color: #273549;
-    border-radius: 6px;
-    color: var(--main-color);
-    font-family: var(--main-font);
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .character-option {
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 50px;
-    
-  }
-  
-  .character-option input[type="checkbox"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    border-radius: 3px;
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-  
-  .character-option input[type="checkbox"]:checked {
-    background: #fff;
-  }
-  
-  .character-option label {
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  
-  .password--container {
-    display: flex;
-    justify-content: start;
-  }
-  
-  .password--box {
-    width: 235px;
-    height: 20px;
-    margin-right: 50px;
-    margin-top: 30px;
-    padding: 15px 20px;
-    background-color: #273549;
-    border-radius: 6px;
-    color: var(--main-color);
-    font-family: var(--main-font);
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
+}
+
+.character-option input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.character-option input[type="checkbox"]:checked {
+  background: #fff;
+}
+
+.character-option label {
+  color: #fff;
+  font-size: 14px;
+}
+
+
+.password--container {
+  display: flex;
+  justify-content: start;
+}
+
+.password--box {
+  width: 235px;
+  height: 20px;
+  margin-right: 50px;
+  margin-top: 30px;
+  padding: 15px 20px;
+  background-color: #273549;
+  border-radius: 6px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 500;
+}

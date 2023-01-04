@@ -1,12 +1,8 @@
-
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"];
 
 let passwordButton = document.getElementById("passwordButton");
 
 function generatePassword() {
-  // Define the characterSet variable
-  let characterSet = '';
-
   // Get the password length and character options from the HTML
   const passwordLength = document.getElementById('passwordLength').value;
   if (passwordLength < 10) {
@@ -26,22 +22,22 @@ function generatePassword() {
 
   // Add uppercase characters to the array if the corresponding checkbox is checked
   if (uppercaseOption) {
-    passwordCharOptions.push(document.getElementById('uppercase-letters-option').value);
+    passwordCharOptions.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
   }
 
   // Add lowercase characters to the array if the corresponding checkbox is checked
   if (lowercaseOption) {
-    passwordCharOptions.push(document.getElementById('lowercase-letters-option').value);
+    passwordCharOptions.push("abcdefghijklmnopqrstuvwxyz");
   }
 
   // Add numbers to the array if the corresponding checkbox is checked
   if (numbersOption) {
-    passwordCharOptions.push(document.getElementById('numbers-option').value);
+    passwordCharOptions.push("0123456789");
   }
 
   // Add special characters to the array if the corresponding checkbox is checked
   if (specialCharactersOption) {
-    passwordCharOptions.push(document.getElementById('special-characters-option').value);
+    passwordCharOptions.push("~`!@#$%^&*()_-=+[]{}|:;'<>,.?/");
   }
 
   // If no character options are selected, display an error message
@@ -50,25 +46,33 @@ function generatePassword() {
     return;
   }
 
-    // Generate the first password
+  // Generate the first password
   let passwordOne = '';
   for (let i = 0; i < passwordLength; i++) {
     const charSet = passwordCharOptions[Math.floor(Math.random() * passwordCharOptions.length)];
-    const randomChar = charSet[Math.floor(Math.random() * charSet.length)];
+    const index = Math.min(Math.floor(Math.random() * charSet.length), charSet.length - 1);
+    const randomChar = charSet[index];
     passwordOne += randomChar;
   }
 
   // Generate the second password
   let passwordTwo = '';
-  for (let i = 0; i < passwordLength; i++) {
-    const character = characterSet[Math.floor(Math.random() * characterSet.length)];
-    passwordTwo += character;
-  }
+    for (let i = 0; i < passwordLength; i++) {
+      const charSet = passwordCharOptions[Math.floor(Math.random() * passwordCharOptions.length)];
+      const index = Math.min(Math.floor(Math.random() * charSet.length), charSet.length - 1);
+      const randomChar = charSet[index];
+      passwordTwo += randomChar;
+}
 
   // Display the generated passwords in the password boxes
   document.getElementById('passwordBoxOne').innerHTML = passwordOne;
   document.getElementById('passwordBoxTwo').innerHTML = passwordTwo;
-
+  
+  if (passwordOne.length !== passwordTwo.length) {
+  generatePassword();
+}
+  
+}
 
 
 function generatePasswordWithOptions(length, includeUppercase, includeLowercase, includeNumbers, includeSpecialCharacters) {
@@ -109,6 +113,4 @@ function generatePasswordWithLength(length) {
     }
   }, 100);
 }
-
-
 
